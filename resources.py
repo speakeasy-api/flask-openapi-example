@@ -27,7 +27,10 @@ class BookList(MethodView):
 class BookDetail(MethodView):
     @blp.response(200, BookSchema)
     def get(self, book_id):
-        """Get book by ID"""
+        """Return books based on ID.
+        ---
+        Internal comment not meant to be exposed.
+        """
         book = Book.query.get_or_404(book_id)
         return book
 
