@@ -1,4 +1,9 @@
 components:
+  headers:
+    PAGINATION:
+      description: Pagination metadata
+      schema:
+        $ref: '#/components/schemas/PaginationMetadata'
   responses:
     DEFAULT_ERROR:
       content:
@@ -68,6 +73,22 @@ openapi: 3.1.0
 paths:
   /books/:
     get:
+      parameters:
+      - in: query
+        name: page
+        required: false
+        schema:
+          default: 1
+          minimum: 1
+          type: integer
+      - in: query
+        name: page_size
+        required: false
+        schema:
+          default: 10
+          maximum: 100
+          minimum: 1
+          type: integer
       responses:
         '200':
           content:
@@ -77,6 +98,11 @@ paths:
                   $ref: '#/components/schemas/Book'
                 type: array
           description: OK
+          headers:
+            X-Pagination:
+              $ref: '#/components/headers/PAGINATION'
+        '422':
+          $ref: '#/components/responses/UNPROCESSABLE_ENTITY'
         default:
           $ref: '#/components/responses/DEFAULT_ERROR'
       summary: List all books

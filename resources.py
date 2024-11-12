@@ -10,9 +10,17 @@ blp = Blueprint("Books", "books", url_prefix="/books", description="Operations o
 @blp.route("/")
 class BookList(MethodView):
     @blp.response(200, BookSchema(many=True))
-    def get(self):
+    @blp.paginate()
+    def get(self, pagination_parameters):
         """List all books"""
-        return Book.query.all()
+        query = Book.query
+        paginated_books = query.paginate(
+            page=pagination_parameters.page,
+            per_page=pagination_parameters.page_size,
+            error_out=False
+        )
+        pagination_parameters.item_count = paginated_books.total
+        return paginated_books.items
 
     @blp.arguments(BookSchema)
     @blp.response(201, BookSchema)
