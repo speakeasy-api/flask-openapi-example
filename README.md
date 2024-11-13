@@ -20,7 +20,9 @@ This is a simple Library API built with Flask, Flask-Smorest, and SQLAlchemy. It
 * Flask-SQLAlchemy
 * Flask-Marshmallow
 * PyYAML
-* Installation
+
+
+## Installation
   
 Clone the repository:
 
