@@ -12,6 +12,7 @@ Jinja2==3.1.4
 MarkupSafe==3.0.2
 marshmallow==3.23.1
 packaging==24.1
+PyYAML==6.0.2
 SQLAlchemy==2.0.36
 typing_extensions==4.12.2
 webargs==8.6.0

@@ -3,6 +3,7 @@ from flask_smorest import Api
 from db import db
 import models
 from resources import blp as BookBlueprint
+import yaml
 
 app = Flask(__name__)
 app.config["API_TITLE"] = "Library API"
@@ -16,6 +17,23 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database-file.db"
 db.init_app(app)
 api = Api(app)
 api.register_blueprint(BookBlueprint)
+
+# Add server information to the OpenAPI spec
+api.spec.options["servers"] = [
+    {
+        "url": "http://127.0.0.1:5000",
+        "description": "Local development server"
+    }
+]
+
+# Serve OpenAPI spec document endpoint for download
+@app.route("/openapi.yaml")
+def openapi_yaml():
+    spec = api.spec.to_dict()
+    return app.response_class(
+        yaml.dump(spec, default_flow_style=False),
+        mimetype="application/x-yaml"
+    )
 
 if __name__ == "__main__":
     with app.app_context():
