@@ -12,7 +12,8 @@ This is a simple Library API built with Flask, Flask-Smorest, and SQLAlchemy. It
 * Create, read, update, and delete books
 * OpenAPI documentation served via Swagger UI
 * SQLite database for data storage
-* Requirements
+
+* **Requirements**
 * Python 3.7+
 * Flask
 * Flask-Smorest
@@ -24,8 +25,8 @@ This is a simple Library API built with Flask, Flask-Smorest, and SQLAlchemy. It
 Clone the repository:
 
 ```bash
-git clone https://github.com/ritza-co/openapi-django.git
-cd openapi-django
+git clone https://github.com/speakeasy-api/openapi-flask-example.git
+cd openapi-flask-example
 ```
 
 Create a virtual environment and activate it:
