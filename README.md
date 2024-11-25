@@ -5,7 +5,7 @@
     </a>
 </div>
 
-This is a simple Library API built with Flask, `flask-sorest`, and SQLAlchemy. It provides the endpoints used to manage books in a library, including creating, reading, updating, and deleting books. The API documentation is available via Swagger UI.
+This is a simple Library API built with Flask, `flask-smorest`, and SQLAlchemy. It provides the endpoints used to manage books in a library, including creating, reading, updating, and deleting books. The API documentation is available via Swagger UI.
 
 ## Features
 
