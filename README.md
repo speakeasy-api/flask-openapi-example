@@ -5,7 +5,7 @@
     </a>
 </div>
 
-This is a simple Library API built with Flask, Flask-Smorest, and SQLAlchemy. It provides endpoints to manage books in a library, including creating, reading, updating, and deleting books. The API documentation is available via Swagger UI.
+This is a simple Library API built with Flask, `flask-smorest`, and SQLAlchemy. It provides the endpoints used to manage books in a library, including creating, reading, updating, and deleting books. The API documentation is available via Swagger UI.
 
 ## Features
 
@@ -13,12 +13,13 @@ This is a simple Library API built with Flask, Flask-Smorest, and SQLAlchemy. It
 * OpenAPI documentation served via Swagger UI
 * SQLite database for data storage
 
-* **Requirements**
+## Prerequisites:
+
 * Python 3.7+
 * Flask
-* Flask-Smorest
+* `flask-smorest`
 * Flask-SQLAlchemy
-* Flask-Marshmallow
+* `flask-marshmallow`
 * PyYAML
 
 
@@ -31,7 +32,7 @@ git clone https://github.com/speakeasy-api/openapi-flask-example.git
 cd openapi-flask-example
 ```
 
-Create a virtual environment and activate it:
+Create and activate a virtual environment:
 
 ```bash
 python -m venv venv
@@ -44,7 +45,7 @@ Install the dependencies:
 pip install -r requirements.txt
 ```
 
-## Running the Application
+## Running the application
 
 Run the Flask application:
 
@@ -52,21 +53,21 @@ Run the Flask application:
 python app.py
 ```
 
-The application will start on http://127.0.0.1:5000.
+The application will start on `http://127.0.0.1:5000`.
 
-## API Endpoints
+## API endpoints
 
 * GET /books/ - List all books
 * POST /books/ - Create a new book
 * GET /books/<int:book_id> - Get a book by ID
 * PUT /books/<int:book_id> - Update a book by ID
 * DELETE /books/<int:book_id> - Delete a book by ID
-* OpenAPI document is available to download at http://127.0.0.1:5000/openapi.yaml.
+* OpenAPI document is available to download at `http://127.0.0.1:5000/openapi.yaml`.
 
-## Project Structure
+## Project structure
 
-* app.py - The main application file
-* db.py - Database initialization
-* models.py - Database models
-* resources.py - API resources and blueprints
-* schemas.py - Marshmallow schemas
+* `app.py` - The main application file
+* `db.py` - Database initialization
+* `models.py` - Database models
+* `resources.py` - API resources and blueprints
+* `schemas.py` - Marshmallow schemas
